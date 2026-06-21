@@ -82,9 +82,9 @@ function Index() {
               { to: "/services/pools", title: "Pools & Hardscape", text: "In-ground pools, patios, fire features and more.", img: pools, icon: Waves },
               { to: "/services/remodeling", title: "Remodeling", text: "Kitchens, baths, additions & whole-home renovations.", img: remodel, icon: Hammer },
             ].map((s) => (
-              <Link
+              <a
                 key={s.to}
-                to={s.to}
+                href={s.to}
                 className="group relative overflow-hidden rounded-xl border border-border bg-card shadow-[var(--shadow-card)] transition hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]"
               >
                 <div className="aspect-[4/5] overflow-hidden">
@@ -95,7 +95,7 @@ function Index() {
                   <h3 className="mt-2 font-display text-xl">{s.title}</h3>
                   <p className="mt-1 text-sm text-white/80">{s.text}</p>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
