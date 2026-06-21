@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { CTABand, PageHero, Section, SectionHeading } from "@/components/section";
 import decks from "@/assets/service-decks.jpg";
 import pools from "@/assets/service-pools.jpg";
