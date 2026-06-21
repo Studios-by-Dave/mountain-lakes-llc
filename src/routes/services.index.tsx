@@ -39,9 +39,9 @@ function ServicesIndex() {
               <img src={s.img} alt={s.title} loading="lazy" className={`aspect-[4/3] w-full rounded-2xl object-cover shadow-[var(--shadow-card)] ${i % 2 ? "md:order-2" : ""}`} />
               <div>
                 <SectionHeading eyebrow={`0${i + 1}`} title={s.title} intro={s.blurb} />
-                <Link to={`/services/${s.slug}` as string} className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
+                <a href={`/services/${s.slug}`} className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80">
                   Learn more <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </div>
             </article>
           ))}
