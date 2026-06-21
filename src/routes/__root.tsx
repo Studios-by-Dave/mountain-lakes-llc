@@ -82,11 +82,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Mountain Lakes Construction LLC | Custom Builds, Decks, Pools & Remodeling in WNC" },
       { name: "description", content: "Custom new construction, A-frame cabins, decks, pools and remodeling serving Shelby, Forest City & the Carolina foothills." },
       { name: "author", content: "Mountain Lakes Construction LLC" },
-      { property: "og:title", content: "Mountain Lakes Construction LLC" },
-      { property: "og:description", content: "Custom new construction, A-frames, decks, pools & remodeling across Western North Carolina." },
+      { property: "og:title", content: "Mountain Lakes Construction LLC | Custom Builds, Decks, Pools & Remodeling in WNC" },
+      { property: "og:description", content: "Custom new construction, A-frame cabins, decks, pools and remodeling serving Shelby, Forest City & the Carolina foothills." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Mountain Lakes Construction LLC" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Mountain Lakes Construction LLC | Custom Builds, Decks, Pools & Remodeling in WNC" },
+      { name: "twitter:description", content: "Custom new construction, A-frame cabins, decks, pools and remodeling serving Shelby, Forest City & the Carolina foothills." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1b1595e2-55cf-43ab-a9af-f75878148881/id-preview-0421db3e--d474ba3d-4fe6-47fa-bfc2-a0f4aa9a75b6.lovable.app-1782005767930.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1b1595e2-55cf-43ab-a9af-f75878148881/id-preview-0421db3e--d474ba3d-4fe6-47fa-bfc2-a0f4aa9a75b6.lovable.app-1782005767930.png" },
     ],
     links: [
       {
