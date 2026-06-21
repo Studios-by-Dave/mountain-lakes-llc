@@ -13,6 +13,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesPoolsRouteImport } from './routes/services.pools'
 import { Route as ServicesDecksRouteImport } from './routes/services.decks'
 import { Route as ServicesAFrameRouteImport } from './routes/services.a-frame'
 
@@ -36,6 +37,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ServicesRoute,
 } as any)
+const ServicesPoolsRoute = ServicesPoolsRouteImport.update({
+  id: '/pools',
+  path: '/pools',
+  getParentRoute: () => ServicesRoute,
+} as any)
 const ServicesDecksRoute = ServicesDecksRouteImport.update({
   id: '/decks',
   path: '/decks',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRouteWithChildren
   '/services/a-frame': typeof ServicesAFrameRoute
   '/services/decks': typeof ServicesDecksRoute
+  '/services/pools': typeof ServicesPoolsRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/services/a-frame': typeof ServicesAFrameRoute
   '/services/decks': typeof ServicesDecksRoute
+  '/services/pools': typeof ServicesPoolsRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -69,6 +77,7 @@ export interface FileRoutesById {
   '/services': typeof ServicesRouteWithChildren
   '/services/a-frame': typeof ServicesAFrameRoute
   '/services/decks': typeof ServicesDecksRoute
+  '/services/pools': typeof ServicesPoolsRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -79,9 +88,16 @@ export interface FileRouteTypes {
     | '/services'
     | '/services/a-frame'
     | '/services/decks'
+    | '/services/pools'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/services/a-frame' | '/services/decks' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/services/a-frame'
+    | '/services/decks'
+    | '/services/pools'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -89,6 +105,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/services/a-frame'
     | '/services/decks'
+    | '/services/pools'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
@@ -128,6 +145,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/services/pools': {
+      id: '/services/pools'
+      path: '/pools'
+      fullPath: '/services/pools'
+      preLoaderRoute: typeof ServicesPoolsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
     '/services/decks': {
       id: '/services/decks'
       path: '/decks'
@@ -148,12 +172,14 @@ declare module '@tanstack/react-router' {
 interface ServicesRouteChildren {
   ServicesAFrameRoute: typeof ServicesAFrameRoute
   ServicesDecksRoute: typeof ServicesDecksRoute
+  ServicesPoolsRoute: typeof ServicesPoolsRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 const ServicesRouteChildren: ServicesRouteChildren = {
   ServicesAFrameRoute: ServicesAFrameRoute,
   ServicesDecksRoute: ServicesDecksRoute,
+  ServicesPoolsRoute: ServicesPoolsRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 
