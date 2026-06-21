@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ServiceAreaRouteImport } from './routes/service-area'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -22,6 +23,11 @@ import { Route as ServicesAFrameRouteImport } from './routes/services.a-frame'
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreaRoute = ServiceAreaRouteImport.update({
+  id: '/service-area',
+  path: '/service-area',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/portfolio': typeof PortfolioRoute
+  '/service-area': typeof ServiceAreaRoute
   '/services': typeof ServicesRouteWithChildren
   '/services/a-frame': typeof ServicesAFrameRoute
   '/services/decks': typeof ServicesDecksRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/portfolio': typeof PortfolioRoute
+  '/service-area': typeof ServiceAreaRoute
   '/services/a-frame': typeof ServicesAFrameRoute
   '/services/decks': typeof ServicesDecksRoute
   '/services/pools': typeof ServicesPoolsRoute
@@ -91,6 +99,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/portfolio': typeof PortfolioRoute
+  '/service-area': typeof ServiceAreaRoute
   '/services': typeof ServicesRouteWithChildren
   '/services/a-frame': typeof ServicesAFrameRoute
   '/services/decks': typeof ServicesDecksRoute
@@ -104,6 +113,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/portfolio'
+    | '/service-area'
     | '/services'
     | '/services/a-frame'
     | '/services/decks'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/portfolio'
+    | '/service-area'
     | '/services/a-frame'
     | '/services/decks'
     | '/services/pools'
@@ -125,6 +136,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/portfolio'
+    | '/service-area'
     | '/services'
     | '/services/a-frame'
     | '/services/decks'
@@ -137,6 +149,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   PortfolioRoute: typeof PortfolioRoute
+  ServiceAreaRoute: typeof ServiceAreaRoute
   ServicesRoute: typeof ServicesRouteWithChildren
 }
 
@@ -147,6 +160,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-area': {
+      id: '/service-area'
+      path: '/service-area'
+      fullPath: '/service-area'
+      preLoaderRoute: typeof ServiceAreaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -232,6 +252,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   PortfolioRoute: PortfolioRoute,
+  ServiceAreaRoute: ServiceAreaRoute,
   ServicesRoute: ServicesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
