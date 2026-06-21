@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/mlc-logo.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -18,9 +17,9 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="container-page flex h-20 items-center justify-between gap-4">
+      <div className="container-page flex h-24 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo.url} alt="Mountain Lakes Construction LLC" width={48} height={48} className="h-12 w-12 rounded-full ring-1 ring-border" />
+          <img src="/assets/MLakes logo1.jpg" alt="Mountain Lakes Construction LLC" width={64} height={64} className="h-16 w-16 rounded-full ring-1 ring-border object-cover" />
           <div className="hidden sm:block leading-tight">
             <div className="font-display text-base font-semibold text-foreground">Mountain Lakes</div>
             <div className="text-[11px] uppercase tracking-[0.18em] text-secondary">Construction LLC</div>
@@ -41,9 +40,10 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <a href="tel:+18005551234" className="hidden xl:inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-primary">
-            <Phone className="h-4 w-4" /> (800) 555-1234
+        <div className="hidden md:flex items-center gap-4">
+          <a href="tel:+18287557551" className="hidden xl:flex flex-col items-end text-sm text-foreground/80 hover:text-primary">
+            <span className="text-[10px] uppercase font-bold text-primary tracking-wider mb-0.5">Call Jacob!</span>
+            <span className="flex items-center gap-1.5"><Phone className="h-4 w-4" /> (828) 755-7551</span>
           </a>
           <Link to="/contact" className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90">
             Free Estimate

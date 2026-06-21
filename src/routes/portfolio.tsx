@@ -26,14 +26,14 @@ export const Route = createFileRoute("/portfolio")({
 });
 
 const projects = [
-  { img: hero, t: "Misty Lake A-Frame", c: "Forest City, NC", cat: "A-Frame" },
-  { img: aframe, t: "Pine Ridge Cabin", c: "Lake Lure, NC", cat: "A-Frame" },
-  { img: decks, t: "Sunset View Deck", c: "Shelby, NC", cat: "Decks" },
-  { img: p2, t: "Covered Outdoor Living", c: "Tryon, NC", cat: "Decks" },
-  { img: pools, t: "Hillside Pool & Hardscape", c: "Rutherfordton, NC", cat: "Pools" },
+  { img: "/assets/portfolio/MLakes_6.jpg", t: "Custom Home Build", c: "Shelby, NC", cat: "New Build" },
+  { img: "/assets/portfolio/MLakes_7.jpg", t: "Exterior Renovation", c: "Forest City, NC", cat: "Remodel" },
+  { img: "/assets/portfolio/MLakes_8.jpg", t: "Outdoor Decking", c: "Lake Lure, NC", cat: "Decks" },
+  { img: "/assets/portfolio/MLakes_9.jpg", t: "Mountain Property", c: "Tryon, NC", cat: "New Build" },
+  { img: "/assets/portfolio/MLakes_10.jpg", t: "Custom Framing", c: "Rutherfordton, NC", cat: "New Build" },
   { img: remodel, t: "Modern Farmhouse Kitchen", c: "Shelby, NC", cat: "Remodel" },
-  { img: p3, t: "Spa Master Bath", c: "Forest City, NC", cat: "Remodel" },
-  { img: p1, t: "Mountain Custom Home", c: "Cleveland County, NC", cat: "New Build" },
+  { img: pools, t: "Hillside Pool & Hardscape", c: "Rutherfordton, NC", cat: "Pools" },
+  { img: hero, t: "Misty Lake A-Frame", c: "Forest City, NC", cat: "A-Frame" },
 ] as const;
 
 const cats = ["All", "A-Frame", "Decks", "Pools", "Remodel", "New Build"] as const;

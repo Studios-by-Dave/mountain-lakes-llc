@@ -64,7 +64,7 @@ function Contact() {
           </form>
 
           <aside className="space-y-6">
-            <ContactCard icon={Phone} title="Call" lines={["(800) 555-1234", "Mon – Fri, 8am – 6pm ET"]} href="tel:+18005551234" />
+            <ContactCard icon={Phone} title="Call Jacob" lines={["(828) 755-7551", "Mon – Fri, 8am – 6pm ET"]} href="tel:+18287557551" />
             <ContactCard icon={Mail} title="Email" lines={["info@mountainlakesconstruction.com"]} href="mailto:info@mountainlakesconstruction.com" />
             <ContactCard icon={MapPin} title="Shelby Office" lines={["Shelby, NC 28150", "Cleveland County"]} />
             <ContactCard icon={MapPin} title="Forest City Office" lines={["Forest City, NC 28043", "Rutherford County"]} />

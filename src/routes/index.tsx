@@ -130,7 +130,7 @@ function Index() {
             </ul>
           </div>
           <div className="relative">
-            <img src={aframe} alt="Modern A-frame in the forest" loading="lazy" className="rounded-2xl shadow-[var(--shadow-elegant)] aspect-[4/3] object-cover" />
+            <img src="/assets/portfolio/MLakes_7.jpg" alt="Blue custom home exterior" loading="lazy" className="rounded-2xl shadow-[var(--shadow-elegant)] aspect-[4/3] object-cover" />
             <div className="hidden md:block absolute -bottom-8 -left-8 max-w-xs rounded-xl bg-card p-5 shadow-[var(--shadow-elegant)] border border-border">
               <div className="flex gap-1 text-[color:var(--primary)]">
                 {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
@@ -149,7 +149,7 @@ function Index() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               { img: aframe, t: "Lakeside A-Frame", c: "Forest City, NC" },
-              { img: pools, t: "Hillside Pool & Patio", c: "Shelby, NC" },
+              { img: "/assets/portfolio/MLakes_10.jpg", t: "Custom Pool & Deck", c: "Shelby, NC" },
               { img: remodel, t: "Modern Farmhouse Kitchen", c: "Rutherfordton, NC" },
             ].map((p) => (
               <div key={p.t} className="overflow-hidden rounded-xl border border-border bg-card">
