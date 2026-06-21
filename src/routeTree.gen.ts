@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ServiceAreaRouteImport } from './routes/service-area'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
@@ -20,6 +21,11 @@ import { Route as ServicesPoolsRouteImport } from './routes/services.pools'
 import { Route as ServicesDecksRouteImport } from './routes/services.decks'
 import { Route as ServicesAFrameRouteImport } from './routes/services.a-frame'
 
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -77,6 +83,7 @@ export interface FileRoutesByFullPath {
   '/portfolio': typeof PortfolioRoute
   '/service-area': typeof ServiceAreaRoute
   '/services': typeof ServicesRouteWithChildren
+  '/testimonials': typeof TestimonialsRoute
   '/services/a-frame': typeof ServicesAFrameRoute
   '/services/decks': typeof ServicesDecksRoute
   '/services/pools': typeof ServicesPoolsRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/portfolio': typeof PortfolioRoute
   '/service-area': typeof ServiceAreaRoute
+  '/testimonials': typeof TestimonialsRoute
   '/services/a-frame': typeof ServicesAFrameRoute
   '/services/decks': typeof ServicesDecksRoute
   '/services/pools': typeof ServicesPoolsRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/portfolio': typeof PortfolioRoute
   '/service-area': typeof ServiceAreaRoute
   '/services': typeof ServicesRouteWithChildren
+  '/testimonials': typeof TestimonialsRoute
   '/services/a-frame': typeof ServicesAFrameRoute
   '/services/decks': typeof ServicesDecksRoute
   '/services/pools': typeof ServicesPoolsRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/service-area'
     | '/services'
+    | '/testimonials'
     | '/services/a-frame'
     | '/services/decks'
     | '/services/pools'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/portfolio'
     | '/service-area'
+    | '/testimonials'
     | '/services/a-frame'
     | '/services/decks'
     | '/services/pools'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/service-area'
     | '/services'
+    | '/testimonials'
     | '/services/a-frame'
     | '/services/decks'
     | '/services/pools'
@@ -151,10 +163,18 @@ export interface RootRouteChildren {
   PortfolioRoute: typeof PortfolioRoute
   ServiceAreaRoute: typeof ServiceAreaRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  TestimonialsRoute: typeof TestimonialsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -254,6 +274,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioRoute: PortfolioRoute,
   ServiceAreaRoute: ServiceAreaRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  TestimonialsRoute: TestimonialsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
